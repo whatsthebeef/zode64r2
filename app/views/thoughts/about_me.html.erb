@@ -1,0 +1,69 @@
+<section class='header'>
+  <h2 class='title'>I am zode<sup>64</sup>, If we work together you will</h2>
+  <div class='value-props row'>
+    <div class='value-props row'>
+      <div class='four columns value-prop'>
+        <%= image_tag 'ear', class: 'value-img' %>
+        Always be dealing directly with me
+      </div>
+      <div class='four columns value-prop'>
+        <%= image_tag 'thoughts', class: 'value-img' %>
+        Benefit from my 15 years experience doing this
+      </div>
+      <div class='four columns value-prop'>
+        <%= image_tag 'hand', class: 'value-img' %>
+        Be able to track tasks and progress in real time
+      </div>
+    </div>
+  </div>
+</section>
+<div class='navbar-spacer'></div>
+<nav class='navbar'>
+  <div class='container'>
+    <ul class='navbar-list'>
+      <li class='navbar-item'><%= link_to 'Some thoughts', thoughts_path, class: 'navbar-link' %></li>
+      <li class='navbar-item'><%= link_to 'Things I most enjoyed making', work_thoughts_path, class: 'navbar-link' %></li>
+    </ul>
+  </div>
+</nav>
+<div class='docs-section' id='whoiam'>
+  <h6 class='docs-header'>Who I am</h6>
+  <p>
+    My actual name is John Bower. I am a freelance software engineer from the UK. I mainly work on web and mobile things.
+  </p>
+</div>
+<div class='docs-section' id='recentthoughts'>
+  <h6 class='docs-header'>A recent thought</h6>
+  <% @thoughts.each do |t| %>
+    <div><%= markdown(t.content) %></div>
+  <% end %>
+</div>
+<div class='docs-section' id='whyzode64'>
+  <h6 class='docs-header'>Why zode64</h6>
+  <p>I wanted a distinct identifier of myself as a programmer so I came up with this.</p>
+  <p>
+    <pre>
+      <code>
+function zode64() {
+    // Euclidean distance from origin to my home village coordinates
+    var euc = Math.sqrt(Math.pow(53.8192, 2) + Math.pow(1.2545, 2));
+    // Base 64 encoded ASCII string of euclidean distance
+    var eucEncod = btoa(euc);
+    // eucEncod == 'NTMuODMzODE4OTE0MjI5'
+    var eucEncodSub = eucEncod.substring(7, 11).toLowerCase();
+    // eucEncodSub == 'zode'
+    return eucEncodSub + '64'; // append base encoding value
+}
+// zode64() == 'zode64'
+console.log(zode64());
+      </code>
+    </pre>
+</p>
+</div>
+<div class='docs-section' id='howtocontactme'>
+  <h6 class='docs-header'>How to contact me</h6>
+  <p>
+    I like email - <a href='mailto:john@zode64.com'>john@zode64.com</a>
+  </p>
+</div>
+

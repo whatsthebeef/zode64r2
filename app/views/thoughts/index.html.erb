@@ -1,0 +1,23 @@
+<div class='navbar-spacer'></div>
+<nav class='navbar'>
+  <div class='container'>
+    <ul class='navbar-list'>
+      <li class='navbar-item'><%= link_to 'About me', root_path, class: 'navbar-link' %></li>
+      <li class='navbar-item'><%= link_to 'Things I most enjoyed making', work_thoughts_path, class: 'navbar-link' %></li>
+    </ul>
+  </div>
+</nav>
+<section class='header'>
+  <h2 class='title'>Here are some of my thoughts...</h2>
+</section>
+<% unless current_user.blank? %>
+  <%= link_to 'Have you had a thought?', new_thought_path, class: 'button button-primary' %>
+<% end %>
+<% @thoughts.each do |t| %>
+  <p><%= markdown(t.content) %></p>
+  <p class='thought-date'><%= t.created_at.strftime("#{t.created_at.day.ordinalize} %B %y") %></p>
+  <% unless current_user.blank? %>
+    <%= link_to 'Change', edit_thought_path(t), class: 'button button-primary' %>
+    <%= button_to 'Delete', t, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button-primary' %>
+  <% end %>
+<% end %>
