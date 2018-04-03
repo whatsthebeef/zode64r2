@@ -1,11 +1,4 @@
-<nav class='navbar'>
-  <div class='container'>
-    <ul class='navbar-list'>
-      <li class='navbar-item'><%= link_to 'About me', root_path, class: 'navbar-link' %></li>
-      <li class='navbar-item'><%= link_to 'Some thoughts', thoughts_path, class: 'navbar-link' %></li>
-    </ul>
-  </div>
-</nav>
+<%= render 'shared/menu' %>
 <section class='header'>
   <h2 class='title'>The things I most enjoyed making</h2>
 </section>
@@ -23,6 +16,6 @@
 </div>
 <div class='docs-section' id='other'>
   <h6 class='docs-header'>Other work</h6>
-  <p>I have worked on lots of other projects. Feel free to contact me by email if you want to discuss them further</p>
+  <p>I have worked on lots of other projects. Feel free to ask me about them via email</p>
 </div>
 
