@@ -6,10 +6,12 @@
   <%= link_to 'Have you had a thought?', new_thought_path, class: 'button button-primary' %>
 <% end %>
 <% @thoughts.each do |t| %>
-  <p><%= markdown(t.content) %></p>
-  <p class='thought-date'><%= t.created_at.strftime("#{t.created_at.day.ordinalize} %B %y") %></p>
-  <% unless current_user.blank? %>
-    <%= link_to 'Change', edit_thought_path(t), class: 'button button-primary' %>
-    <%= button_to 'Delete', t, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button-primary' %>
-  <% end %>
+  <div class='thought'>
+    <%= markdown(t.content) %>
+    <!-- <p class='thought-date'><%= t.created_at.strftime("#{t.created_at.day.ordinalize} %B %y") %></p> -->
+    <% unless current_user.blank? %>
+      <%= link_to 'Change', edit_thought_path(t), class: 'button button-primary' %>
+      <%= button_to 'Delete', t, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button-primary' %>
+    <% end %>
+  </div>
 <% end %>

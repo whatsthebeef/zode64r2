@@ -248,3 +248,11 @@
 textarea.thought {
   height: 15em;
 }
+div.thought {
+  border-bottom: 1px solid #eee;
+  margin-top: 15px;
+}
+
+div.thought:last-child {
+  border-bottom: none;
+}
