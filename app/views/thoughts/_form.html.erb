@@ -1,5 +1,5 @@
 <%= form_for @thought do |f| %>
-  <%= f.text_area :content, class: 'u-full-width' %>
+  <%= f.text_area :content, class: 'thought u-full-width' %>
   <%= link_to 'Forget it', thoughts_path, class: 'button button-primary' %>
   <%= f.submit 'This', class: 'button-primary' %>
 <% end %>
