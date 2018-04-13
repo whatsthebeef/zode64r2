@@ -2,6 +2,12 @@
 <section class='header'>
   <h2 class='title'>Here are some of my thoughts...</h2>
 </section>
+
+<%= form_for thoughts_path, method: :get do |f| %>
+  <%= text_field_tag :q, params[:q], class: 'u-full-width' %> 
+  <%= submit_tag 'Search', name: nil, class: 'button-primary' %>
+<% end %>
+
 <% unless current_user.blank? %>
   <%= link_to 'Have you had a thought?', new_thought_path, class: 'button button-primary' %>
 <% end %>

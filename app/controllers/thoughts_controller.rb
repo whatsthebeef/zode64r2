@@ -3,7 +3,7 @@ class ThoughtsController < ApplicationController
   before_action :set_thought, only: [:edit, :update, :destroy]
 
   def index
-    @thoughts = Thought.all.order(created_at: :desc)
+    @thoughts = Thought.search(params[:q])
   end
 
   def about_me
