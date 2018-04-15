@@ -5,12 +5,13 @@ class ThoughtsController < ApplicationController
   def index
     @thoughts = Thought.search_content({
       q: params[:q],
+      feel_lucky: params[:feel_lucky],
       more_like_this: params[:more_like_this]
     })
   end
 
   def about_me
-    @thought = Thought.last
+    @thought = Thought.random
   end
 
   def work
@@ -37,7 +38,7 @@ class ThoughtsController < ApplicationController
   end
 
   def destroy
-    if @thought.destroy!
+    if @thought.destroy
       redirect_to thoughts_path
     end
   end

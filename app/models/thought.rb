@@ -12,6 +12,8 @@ class Thought
     elsif !opts[:more_like_this].blank?
       thought = find(opts[:more_like_this])
       return thought.more_like_this
+    elsif !opts[:feel_lucky].blank?
+      return Thought.feel_lucky
     else
       return all({
         sort: [{ created_at: { order: 'desc'} }]
@@ -19,8 +21,21 @@ class Thought
     end
   end
 
-  def self.last
-    find_in_batches(size: 1).peek.to_a.first
+  def self.feel_lucky
+    self.random.more_like_this
+  end
+
+  def self.random
+    return search({
+      size: 1,
+      query: {
+        function_score: {
+          functions: [
+            { random_score: { seed: Time.now } }
+          ]
+        }
+      }
+    }).first
   end
 
   def more_like_this
