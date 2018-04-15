@@ -6,18 +6,20 @@
 <%= form_for thoughts_path, method: :get do |f| %>
   <%= text_field_tag :q, params[:q], class: 'u-full-width' %> 
   <%= submit_tag 'Search', name: nil, class: 'button-primary' %>
+  <% unless current_user.blank? %>
+    <%= link_to 'Have you had a thought?', new_thought_path, class: 'button button-primary' %>
+  <% end %>
 <% end %>
 
-<% unless current_user.blank? %>
-  <%= link_to 'Have you had a thought?', new_thought_path, class: 'button button-primary' %>
-<% end %>
 <% @thoughts.each do |t| %>
   <div class='thought'>
     <%= markdown(t.content) %>
     <!-- <p class='thought-date'><%= t.created_at.strftime("#{t.created_at.day.ordinalize} %B %y") %></p> -->
     <% unless current_user.blank? %>
-      <%= link_to 'Change', edit_thought_path(t), class: 'button button-primary' %>
-      <%= button_to 'Delete', t, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button-primary' %>
+      <div class='thought-buttons'>
+        <%= link_to 'Change', edit_thought_path(t), class: 'button button-primary' %>
+        <%= link_to 'Show', thoughts_path(more_like_this:t.id), class: 'button button-primary' %>
+      </div>
     <% end %>
   </div>
 <% end %>

@@ -3,3 +3,4 @@
   <h2 class='title'>Changed your mind?</h2>
 </section>
 <%= render 'form' %>
+<%= button_to 'Delete', @thought, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button-primary' %>

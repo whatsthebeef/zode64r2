@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'redcarpet' 
 gem 'pg'
 gem 'textacular', '~> 5.0'
+gem 'elasticsearch-persistence', require: 'elasticsearch/persistence/model'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

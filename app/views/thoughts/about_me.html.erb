@@ -27,9 +27,7 @@
 </div>
 <div class='docs-section' id='recentthoughts'>
   <h6 class='docs-header'>A recent thought</h6>
-  <% @thoughts.each do |t| %>
-    <div><%= markdown(t.content) %></div>
-  <% end %>
+  <div><%= markdown(@thought.content) %></div>
 </div>
 <div class='docs-section' id='whyzode64'>
   <h6 class='docs-header'>Why zode64</h6>

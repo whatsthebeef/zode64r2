@@ -3,11 +3,14 @@ class ThoughtsController < ApplicationController
   before_action :set_thought, only: [:edit, :update, :destroy]
 
   def index
-    @thoughts = Thought.search(params[:q])
+    @thoughts = Thought.search_content({
+      q: params[:q],
+      more_like_this: params[:more_like_this]
+    })
   end
 
   def about_me
-    @thoughts = Thought.recent
+    @thought = Thought.last
   end
 
   def work
@@ -22,7 +25,7 @@ class ThoughtsController < ApplicationController
 
   def create
     @thought = Thought.new(thought_params)
-    if @thought.save!
+    if @thought.save
       redirect_to thoughts_path
     end
   end

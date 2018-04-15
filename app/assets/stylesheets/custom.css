@@ -256,3 +256,27 @@ div.thought {
 div.thought:last-child {
   border-bottom: none;
 }
+
+a {
+  color: #0A4773;
+}
+
+a:hover, a:active {
+  color: #032640;
+}
+
+.button.button-primary, input[type='submit'].button-primary {
+  background-color: #0A4773;
+  border-color: #0A4773;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+
+.button.button-primary:hover, input[type='submit'].button-primary:hover, .button.button-primary:active, input[type='submit'].button-primary:active, .button.button-primary:focus, input[type='submit'].button-primary:focus {
+  background-color: #032640;
+  border-color: #032640;
+}
+
+.thought-buttons > form, .thought-buttons > a {
+}
