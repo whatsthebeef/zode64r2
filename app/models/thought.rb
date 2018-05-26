@@ -44,11 +44,11 @@ class Thought
         fields: [ 'content' ],
         like: content,
         min_term_freq: 1,
-        min_word_length: 5,
         include: true,
+        stop_words: ['the', 'this', 'a', 'at', 'is'],
         min_doc_freq: 1 
       } }, 
-      sort: [{ created_at: { order: 'desc'} }]
+      # sort: [{ created_at: { order: 'desc'} }]
     });
   end
 
