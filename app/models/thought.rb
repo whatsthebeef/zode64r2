@@ -46,7 +46,6 @@ class Thought
         min_term_freq: 1,
         min_word_length: 5,
         include: true,
-        max_query_terms: 25,
         min_doc_freq: 1 
       } }, 
       sort: [{ created_at: { order: 'desc'} }]
