@@ -2,7 +2,11 @@
 <html lang='en'>
   <head>
     <meta charset='utf-8'>
-    <title>Zode64, freelance software engineer</title>
+    <% if Rails.configuration.is_looking_for_work %>
+      <title>Zode64, freelance software engineer</title>
+    <% else %>
+      <title>Zode64, some thoughts</title>
+    <% end %>
     <meta name='description' content=''>
     <meta name='author' content='zode64'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
