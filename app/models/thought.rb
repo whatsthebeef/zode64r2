@@ -45,7 +45,7 @@ class Thought
         like: content,
         min_term_freq: 1,
         include: true,
-        stop_words: ['the', 'this', 'a', 'at', 'is'],
+        stop_words: ['the', 'this', 'a', 'at', 'is', 'by', 'for', 'as', 'from', 'it', 'and', 'in', 'be', 'I', 'of', 'very', 'when', 'which', 'or'],
         min_doc_freq: 1 
       } }, 
       # sort: [{ created_at: { order: 'desc'} }]
