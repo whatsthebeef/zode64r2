@@ -45,7 +45,8 @@ class Thought
         like: content,
         min_term_freq: 1,
         include: true,
-        stop_words: ['the', 'this', 'a', 'at', 'is', 'by', 'for', 'as', 'from', 'it', 'and', 'in', 'be', 'I', 'of', 'very', 'when', 'which', 'or'],
+        stop_words: ['the', 'this', 'a', 'at', 'is', 'by', 'for', 'as', 'from', 'it', 'and', 'in', 'be', 'I', 'of', 'very', 'when', 'which', 'or', 'why', 'up', 'will', 'now', 'more', 'because', 'like', 'you', 'me', 'between', 'under', 'over', 'use', 'getting', 'certain', 'may', 'maybe', 'can', 'can\'t', 'however', 'probably', 'won\'t', 'way', 'should', 'could', 'would'],
+        boost_terms: 2,
         min_doc_freq: 1 
       } }, 
       # sort: [{ created_at: { order: 'desc'} }]
