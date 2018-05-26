@@ -1,18 +1,36 @@
 <section class='header'>
-  <h2 class='title'>I am zode<sup>64</sup>. If we work together you will</h2>
+  <h2 class='title'>I am zode<sup>64</sup>. 
+    <% if Rails.configuration.is_looking_for_work %>
+      If we work together you will
+    <% else %>
+      I like programming
+    <% end %>
+  </h2>
   <div class='value-props row'>
     <div class='value-props row'>
       <div class='four columns value-prop'>
         <%= image_tag 'ear.png', class: 'value-img' %>
-        Deal directly with me
+        <% if Rails.configuration.is_looking_for_work %>
+          Deal directly with me
+        <% else %>
+          I have ears
+        <% end %>
       </div>
       <div class='four columns value-prop'>
         <%= image_tag 'thoughts.png', class: 'value-img' %>
-        Benefit from my 15 years of experience
+        <% if Rails.configuration.is_looking_for_work %>
+          Benefit from my 15 years of experience
+        <% else %>
+          I have a brain
+        <% end %>
       </div>
       <div class='four columns value-prop'>
         <%= image_tag 'hand.png', class: 'value-img' %>
-        Be able to track tasks and progress
+        <% if Rails.configuration.is_looking_for_work %>
+          Be able to track tasks and progress
+        <% else %>
+          I have hands
+        <% end %>
       </div>
     </div>
   </div>
@@ -22,7 +40,11 @@
 <div class='docs-section' id='whoiam'>
   <h6 class='docs-header'>Who I am</h6>
   <p>
-    My name is John Bower. I am a freelance software engineer from the UK. I mainly work on web and mobile things.
+    <% if Rails.configuration.is_looking_for_work %>
+      My name is John Bower. I am a freelance software engineer from the UK. I mainly work on web and mobile things.
+    <% else %>
+      My name is John Bower. I like making web and mobile things
+    <% end %>
   </p>
 </div>
 <div class='docs-section' id='recentthoughts'>
