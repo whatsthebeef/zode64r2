@@ -44,8 +44,10 @@ class Thought
         fields: [ 'content' ],
         like: content,
         min_term_freq: 1,
-        max_query_terms: 1,
-        min_doc_freq: 1
+        min_word_length: 5,
+        include: true,
+        max_query_terms: 25,
+        min_doc_freq: 1 
       } }, 
       sort: [{ created_at: { order: 'desc'} }]
     });
