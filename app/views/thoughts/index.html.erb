@@ -1,8 +1,16 @@
 <%= render 'shared/menu' %>
-<section class='header'>
+<section class='header thoughts'>
   <h2 class='title'>Here are some of my thoughts...</h2>
 </section>
-
+<div class='value-props row thoughts'>
+  <div class='four columns value-prop'>
+  </div>
+  <div class='four columns value-prop'>
+    <%= image_tag 'experience.png', class: 'value-img' %>
+  </div>
+  <div class='four columns value-prop'>
+  </div>
+</div>
 <%= form_for thoughts_path, method: :get do |f| %>
   <%= text_field_tag :q, params[:q], class: 'u-full-width' %> 
   <%= submit_tag 'Search', name: nil, class: 'button-primary' %>

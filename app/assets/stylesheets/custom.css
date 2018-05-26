@@ -280,3 +280,11 @@ a:hover, a:active {
 
 .thought-buttons > form, .thought-buttons > a {
 }
+
+.header.thoughts {
+  margin-top: 6em;
+} 
+
+.value-props.thoughts {
+  margin-top: 0em;
+}
