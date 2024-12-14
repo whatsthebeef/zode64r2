@@ -27,6 +27,5 @@
     <% unless current_user.blank? %>
       <%= link_to 'Change', edit_thought_path(t), class: 'button button-primary' %>
     <% end %>
-    <%= link_to 'More Like This', thoughts_path(more_like_this:t.id), class: 'button button-primary' %>
   </div>
 <% end %>
