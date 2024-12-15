@@ -3,8 +3,8 @@ default: &default
   encoding: unicode
   database: zode64
   pool: 5
-  username: zode64
-  password:
+  username: postgres
+  password: postgres
 
 test:
   adapter: sqlite3
