@@ -32,7 +32,7 @@ class ThoughtsController < ApplicationController
   end
   
   def update
-    if @thought.update_attributes(thought_params)
+    if @thought.update(thought_params)
       redirect_to thoughts_path
     end
   end

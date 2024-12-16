@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     get :about_me, on: :collection
     get :work, on: :collection
   end
-  root to: 'thoughts#index'
+  root to: 'thoughts#about_me'
   get :thoughts, to: 'thoughts#index'
   get :about_me, to: 'thoughts#about_me'
   get :work, to: 'thoughts#work'
