@@ -29,6 +29,9 @@ gem 'pg'
 gem 'textacular', '~> 5.0'
 gem 'elasticsearch-model'
 
+gem 'ruby-openai'
+gem 'whenever', require: false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
